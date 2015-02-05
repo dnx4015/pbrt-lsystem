@@ -1,0 +1,29 @@
+#if defined(_MSC_VER)
+#pragma once
+#endif
+
+#ifndef PBRT_LSYSTEM_PARSE_H
+#define PBRT_LSYSTEM_PARSE_H
+
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cstring>
+#include <map>
+#include <vector>
+
+typedef map <char, string> vrules;
+typedef map <char, int> vparams;
+
+void parseGrammarFile(string fileName, string &result, 
+					  vparams &params);
+void split(string str, char delim, vector<string> &list);
+bool cmpStr(string str, string str2);
+void processLine(string line, vparams &params, 
+				string &axiom, vrules &rules);
+void printAll(vparams params, string axiom, vrules rules);
+void executeRules(string axiom, int nreps, vrules &rules, 
+				  string &result);
+#endif // PBRT_LSYSTEM_PARSE_H
