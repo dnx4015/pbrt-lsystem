@@ -1,5 +1,6 @@
-Nome dos participantes:
-- Diana Naranjo
+# pbrt-lsystem
+
+Pbrt extesion that allows a user to create a lsystem shape 
 
 Características do sistema:
 * CPU: Intel Core i5
