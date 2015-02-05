@@ -1,0 +1,46 @@
+LookAt -7 40 7 -7 0 7 0 0 1
+Camera "perspective" "float fov" [30 ]
+
+Film "image" "integer xresolution" [1000 ] "integer yresolution" [1000 ] 
+    "string filename" "../outputs/lsystem6.png"
+
+SurfaceIntegrator "directlighting" "integer maxdepth" [10]
+
+Sampler "lowdiscrepancy" "integer pixelsamples" [1]
+PixelFilter "box"
+
+WorldBegin
+LightSource "distant" "point from" [5 5 10 ] "point to" [0 0 0 ] "color L"
+	[3.141593 3.141593 3.141593 ] 
+LightSource "distant" "point from" [-5 -5 10 ] "point to" [0 0 0 ] "color L"
+	[3.141593 3.141593 3.141593 ] 
+LightSource "distant" "point from" [-5 5 10 ] "point to" [0 0 0 ] "color L"
+	[3.141593 3.141593 3.141593 ] 
+LightSource "distant" "point from" [5 -5 10 ] "point to" [0 0 0 ] "color L"
+	[3.141593 3.141593 3.141593 ] 
+
+Include "lsystems/grammar1/arbol-mat.pbrt" 
+Include "lsystems/grammar1/objects.pbrt"
+
+AttributeBegin
+	Translate -5 0 0
+	Texture "checker" "color" "checkerboard" 
+		"string mapping" "planar"
+		"vector v1" [ 1 0 0 ] "vector v2" [ 0 0 1]
+		"string aamode" ["none"]
+Texture "lines-tex" "color" "imagemap" "string filename" "textures/lines.exr"
+	"float uscale" [100] "float vscale" [100]
+
+	Material "matte" "texture Kd" "lines-tex"
+    Shape "trianglemesh"  "integer indices" [0 2 1 0 3 2 ] 
+	"point P" [-100 -100 -100 400 -100 -100 400 400 -100 -100 400 -100] 
+        "float st" [ 0 0 1 0 0 1 1 1]
+AttributeEnd
+
+AttributeBegin
+	Translate 0 0 0
+	NamedMaterial "Tronco"
+	Shape "lsystem" "string grammarFile" "lsystems/grammar6.in" "integer nrep" 4
+AttributeEnd
+
+WorldEnd

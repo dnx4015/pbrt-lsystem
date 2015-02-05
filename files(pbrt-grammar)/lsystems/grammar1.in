@@ -1,0 +1,12 @@
+define a 22.5 	#angle
+define r 0.95 	#ratio
+define F cylinder
+define Q leaf
+axiom T(2,0.06,1.5)
+prod T(s,r,l) > F(1.5*s,1.5*r,l)A(s,r,l)
+prod A(s,r,l) > [&S(s,r,l)L(l,r)A(0.6*s,0.65*r,l)]/////[&S(s,r,l)L(l,r)A(0.6*s,0.65*r,l)]///////[&S(s,r,l)L(l,r)A(0.6*s,0.65*r,l)]///[&S(s,r,l)L(l,r)A(0.6*s,0.65*r,l)]
+prod A(s,r,l) > [&S(s,r,l)L(l,r)A(0.6*s,0.65*r,l)]/////[&S(s,r,l)L(l,r)A(0.6*s,0.65*r,l)]///////[&S(s,r,l)L(l,r)A(0.6*s,0.65*r,l)]
+prod S(s,r,l) > F(s*0.5,r,l)L(l,r)F(s*0.5,r,l)
+prod S(s,r,l) > F(s*0.75,r,l)L(l,r)F(s*0.25,r,l)
+prod L(l,r) > [&&Q(l,r)][////&&&Q(l,r)][\\\\\&&&Q(l,r)][//////&&Q(l,r)]
+prod L(l,r) > [&&Q(l,r)][//&&&Q(l,r)][\\\\&&&Q(l,r)][/////&&Q(l,r)]

@@ -1,0 +1,7 @@
+define a 60	#angle
+define r 1 	#ratio
+define F cylinder 
+define W cylinder 
+axiom F
+prod F > F+W++W-F--FF-W+
+prod W > -F+WW++W+F--F-W

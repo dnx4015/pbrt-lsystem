@@ -1,0 +1,8 @@
+define a 90	#angle
+define r 0.95 	#ratio
+define F cylinder 
+axiom A
+prod A > B-F+CFC+F-D&F^D-F+&&CFC+F+B//
+prod B > A&F^CFB^F^D^^-F-D^|F^B|FC^F^A//
+prod C > |D^|F^B-F+C^F^A&&FA&F^C+F+B^F^D//
+prod D > |CFB-F+B|FA&F^A&&FB-F+B|FC//

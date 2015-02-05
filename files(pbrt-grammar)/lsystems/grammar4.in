@@ -1,0 +1,5 @@
+define a 90 	#angle
+define r 1 	#ratio
+define F cylinder 
+axiom F-F-F-F
+prod F > F-F+F-F-F

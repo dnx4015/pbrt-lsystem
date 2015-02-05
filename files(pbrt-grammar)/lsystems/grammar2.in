@@ -1,0 +1,5 @@
+define a 25
+define r 0.9
+define F cylinder
+axiom F(1,0.1)
+prod F(s,r) > F(s,r)[&F(0.8*s,0.5*r)][^+F(0.8*s,0.5*r)][^-F(0.8*s,0.5*r)]
